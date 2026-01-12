@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viggy | Food Delivery</title>
+
+    <style>
+        :root {
+            --primary-orange: #e04a0f;
+            --text-main: #3d4152;
+            --text-light: #686b78;
+            --bg-gray: #f9f9f9;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-main);
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-orange);
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+
+        /* Hero & Search */
+        .hero {
+            padding: 60px 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            border: 1px solid #d4d5d9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .search-container input {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-container button {
+            background-color: var(--primary-orange);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .search-container button:hover {
+            background-color: #c43d0b;
+        }
+
+        /* Sections */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary-orange);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        /* Cards */
+        .card {
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: scale(0.98); /* Slight shrink effect like modern UI */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #eee;
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            height: 180px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-content h3 {
+            margin: 0;
+            font-size: 19px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .cuisine {
+            margin: 8px 0;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .rating {
+            background-color: #48c479;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .eta {
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #02060c;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: #93959f;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="#" class="logo">Viggy</a>
+    <nav style="display: flex; gap: 30px; font-weight: 600; color: var(--text-main);">
+        <span>Search</span>
+        <span>Offers</span>
+        <span>Help</span>
+        <span>Cart</span>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Hungry? Order now.</h1>
+    <div class="search-container">
+        <input type="text" placeholder="Search for restaurant, cuisine or a dish">
+        <button>Find Food</button>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Top Restaurant Chains</h2>
+
+    <div class="grid">
+        <a href="#" class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=500&q=80" alt="North Square">
+            </div>
+            <div class="card-content">
+                <h3>North Square</h3>
+                <p class="cuisine">North Indian • Thalis • Biryani</p>
+                <div class="card-footer">
+                    <span class="rating">★ 4.2</span>
+                    <span class="eta">30-35 MINS</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80" alt="Gazebo">
+            </div>
+            <div class="card-content">
+                <h3>Gazebo Fine Dining</h3>
+                <p class="cuisine">Asian • Thai • Japanese</p>
+                <div class="card-footer">
+                    <span class="rating">★ 4.5</span>
+                    <span class="eta">40-45 MINS</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=500&q=80" alt="Gym Khanna">
+            </div>
+            <div class="card-content">
+                <h3>Gym Khanna</h3>
+                <p class="cuisine">Traditional • Mughlai • Kebabs</p>
+                <div class="card-footer">
+                    <span class="rating">★ 4.0</span>
+                    <span class="eta">25-30 MINS</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Domino's">
+            </div>
+            <div class="card-content">
+                <h3>Domino’s Pizza</h3>
+                <p class="cuisine">Pizzas • Italian • Desserts</p>
+                <div class="card-footer">
+                    <span class="rating">★ 4.3</span>
+                    <span class="eta">20 MINS</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<footer>
+    <div class="logo" style="color: white; margin-bottom: 20px;">Viggy</div>
+    <p>© 2026 Viggy Technologies Pvt. Ltd</p>
+    <p style="margin-top: 10px;">Made with ❤️ for UI Practice</p>
+</footer>
+
+</body>
+</html>
